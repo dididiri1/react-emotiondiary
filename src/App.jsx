@@ -9,7 +9,7 @@ import Edit from "./pages/Edit";
 import Notfound from "./pages/Notfound";
 
 const mockData = [
-  {
+  {  
     id: 1,
     createDate: new Date().getTime(),
     emotionId: 1,
@@ -22,6 +22,7 @@ const mockData = [
     content: "2번 일기 내용",
   },
 ];
+
 
 function reducer(state, action) {
   switch (action.type) {
