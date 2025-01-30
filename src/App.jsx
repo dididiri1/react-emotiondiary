@@ -38,9 +38,7 @@ function reducer(state, action) {
         String(item.id) === String(action.data.id) ? action.data : item
       );
     case "DELETE":
-      return state.filter((item) => {
-        String(item.id) !== String(action.id);
-      });
+      return state.filter((item) => String(item.id) !== String(action.id));
     default:
       return state;
   }
@@ -67,12 +65,12 @@ function App() {
   };
 
   // 기존 일기 수정
-  const onUpdate = (id, createDate, emotionId, content) => {
+  const onUpdate = (id, createdDate, emotionId, content) => {
     dispatch({
       type: "UPDATE",
       data: {
         id,
-        createDate,
+        createdDate,
         emotionId,
         content,
       },
@@ -82,9 +80,7 @@ function App() {
   const onDelete = (id) => {
     dispatch({
       type: "DELETE",
-      data: {
-        id,
-      },
+      id,
     });
   };
 
